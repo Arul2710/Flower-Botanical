@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Workshop — Flower & Botanical Studio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+     <link rel="icon" type="img/jpg" href="img/growwpark-logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="tailwind.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cormorant: ['"Cormorant Garamond"', 'serif'],
+                        jost: ['Jost', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#ec4899',
+                        primaryDark: '#be185d',
+                        studioBg: '#fef8f4',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-jost bg-[#fef8f4] dark:bg-black text-[#1f1015] dark:text-gray-100 transition-colors duration-300">
+
+    <!-- NAVBAR CONTAINER -->
+    <div id="navbar-root"></div>
+
+   <main class="overflow-x-hidden">
+    <!-- 1. BOOKING HERO SECTION (With BG Image) -->
+    <section class="relative py-28 md:py-40 px-6 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="img/booking1.jpg" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#fef8f4]/10 dark:via-black/10 to-[#fef8f4] dark:to-black transition-colors duration-300"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <span class="text-primary dark:text-gray-300 tracking-[0.3em] uppercase text-xs font-bold mb-4 block transition-colors">Premium Services</span>
+            <h1 class="font-cormorant text-5xl md:text-8xl text-primaryDark dark:text-white mb-6 leading-tight transition-colors">
+                Reserve Your <br> 
+                <span class="italic text-primary dark:text-gray-300 transition-colors">Botanical Experience</span>
+            </h1>
+            <p class="text-[#5a3a45] dark:text-gray-300 text-lg md:text-xl max-w-2xl mx-auto font-light transition-colors">
+                Book a seat in our hands-on workshops or consult with us for your custom floral preservation needs.
+            </p>
+            
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#booking-form" class="px-10 py-4 bg-primary text-white rounded-full font-bold uppercase tracking-widest hover:bg-primaryDark transition-all shadow-lg">Book Now</a>
+                <a href="#collections" class="px-10 py-4 bg-white dark:bg-gray-800 text-primaryDark dark:text-white border border-pink-100 dark:border-gray-700 rounded-full font-bold uppercase tracking-widest hover:bg-studioBg dark:hover:bg-gray-700 transition-all">View Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. PROFESSIONAL BENTO-STYLE COLLECTIONS -->
+<section id="collections" class="py-24 px-4 md:px-6 bg-[#fcf9f9] dark:bg-gray-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- Professional Header -->
+        <div class="text-center mb-20 relative">
+            
+            <span class="relative text-primary dark:text-gray-300 tracking-[0.5em] uppercase text-[10px] font-bold mb-4 block italic transition-colors">The Collector's Vault</span>
+            <h2 class="relative font-cormorant text-6xl md:text-8xl text-primaryDark dark:text-white leading-tight mb-8 transition-colors">
+                Flower <span class="italic text-primary dark:text-gray-300 font-light transition-colors">&</span> Botanical
+            </h2>
+            <p class="relative text-[#9c6e7c] dark:text-gray-400 max-w-xl mx-auto italic text-base md:text-lg font-light transition-colors">
+                Handpicked. Preserved. Framed. A curated selection of nature's finest fleeting moments.
+            </p>
+        </div>
+
+        <!-- Professional Bento Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-8 auto-rows-[250px] md:auto-rows-[300px]">
+            
+            <!-- Card 1: The Masterpiece (Large) -->
+            <div class="md:col-span-3 md:row-span-2 group relative overflow-hidden bg-white dark:bg-gray-700 rounded-[3rem] p-8 shadow-sm hover:shadow-2xl transition-all duration-700">
+                <div class="absolute inset-0 z-0">
+                    <img src="img/booking2.jpg" class="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primaryDark/80 dark:from-gray-800/80 via-transparent to-transparent"></div>
+                </div>
+                <div class="relative z-10 h-full flex flex-col justify-end text-white">
+                    <span class="text-[10px] tracking-[0.3em] font-bold uppercase mb-2">Heritage Collection</span>
+                    <h3 class="font-cormorant text-4xl md:text-5xl mb-4 italic">Wild Highland Flora</h3>
+                    <p class="text-sm text-white/70 mb-8 max-w-sm">Museum-quality preservation of high-altitude species in hand-carved oak frames.</p>
+                    <button class="w-fit px-8 py-3 bg-white text-primaryDark dark:bg-gray-800 dark:text-white rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all">Pre-Book Order</button>
+                </div>
+            </div>
+
+            <!-- Card 2: The Minimalist (Tall) -->
+            <div class="md:col-span-3 md:row-span-1 lg:col-span-2 lg:row-span-2 group relative bg-white dark:bg-gray-700 rounded-[3rem] p-6 flex flex-col border border-pink-50 dark:border-gray-700 hover:border-primary/20 shadow-sm transition-all duration-500">
+                <div class="relative overflow-hidden rounded-[2.5rem] flex-grow mb-6">
+                    <img src="img/booking3.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                    <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 backdrop-blur-sm px-4 py-1 rounded-full text-[10px] font-bold text-primary dark:text-gray-300">Resin Art</div>
+                </div>
+                <div class="text-center">
+                    <h3 class="font-cormorant text-3xl text-primaryDark dark:text-white mb-2 transition-colors">Tropical Resin</h3>
+                    <p class="text-xs text-[#9c6e7c] dark:text-gray-400 mb-6 transition-colors">Monstera leaves in glass resin blocks.</p>
+                    <button class="w-full py-4 bg-studioBg dark:bg-gray-800 text-primaryDark dark:text-white rounded-2xl text-[10px] font-bold uppercase tracking-widest group-hover:bg-primaryDark group-hover:text-white transition-all">Quick Purchase</button>
+                </div>
+            </div>
+
+            <!-- Card 3: The Circular Focus -->
+            <div class="md:col-span-3 lg:col-span-1 lg:row-span-1 group relative bg-primaryDark dark:bg-gray-800 rounded-[3rem] overflow-hidden flex items-center justify-center p-8 transition-all duration-500">
+                <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                    <i class="fas fa-leaf text-[15rem] -rotate-45"></i>
+                </div>
+                <div class="relative z-10 text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full border-2 border-white/20 p-2 overflow-hidden group-hover:border-primary transition-all duration-500">
+                        <img src="img/booking4.jpg" class="w-full h-full object-cover rounded-full group-hover:scale-125 transition-transform duration-700">
+                    </div>
+                    <h4 class="text-white font-cormorant text-xl mb-4 italic">Modern Eucalyptus</h4>
+                    <a href="#" class="text-primary dark:text-gray-300 text-[9px] font-bold uppercase tracking-tighter border-b border-primary/40 dark:border-gray-700/40 hover:text-white">Learn Process</a>
+                </div>
+            </div>
+
+            <!-- Card 4: Horizontal Showcase -->
+           <!-- Single Collection Card: Image on Top, Content Below -->
+<div class="md:col-span-3 lg:col-span-1 lg:row-span-1 group relative bg-white dark:bg-gray-700 rounded-[3rem] p-6 border border-pink-50 dark:border-gray-700 hover:shadow-xl transition-all duration-500 flex flex-col items-center text-center">
+    
+    <!-- 1. Image Area (Top) -->
+    <div class="w-full h-56 sm:h-48 rounded-[2rem] overflow-hidden mb-6">
+        <img src="img/booking5.jpg" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+    </div>
+    
+    <!-- 2. Content Area (Below Image) -->
+    <div class="flex flex-col items-center">
+        <h4 class="font-cormorant text-2xl md:text-xl text-primaryDark dark:text-white leading-tight mb-2 transition-colors">
+            Vintage Rose Heritage
+        </h4>
+        <div class="w-8 h-[1px] bg-primary/30 mb-3"></div> <!-- Decorative Line -->
+        <span class="text-primary dark:text-gray-300 font-bold text-xl italic leading-none transition-colors">
+            $125
+        </span>
+    </div>
+
+    <!-- 3. Optional: Quick Action Button (Always Visible) -->
+    <button class="mt-6 w-full py-3 bg-studioBg dark:bg-gray-800 text-primaryDark dark:text-white rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-primaryDark hover:text-white transition-all">
+        Book Now
+    </button>
+</div>
+
+            <!-- Card 5: Dark Minimalist -->
+            <div class="md:col-span-3 lg:col-span-2 lg:row-span-1 group relative bg-white dark:bg-gray-700 border border-pink-50 dark:border-gray-700 rounded-[3rem] p-6 flex flex-row items-center justify-between hover:shadow-2xl transition-all duration-700">
+                <div class="max-w-[60%]">
+                    <span class="text-[9px] text-primary dark:text-gray-300 font-bold uppercase tracking-widest mb-2 block transition-colors">New Release</span>
+                    <h3 class="font-cormorant text-3xl text-primaryDark dark:text-white mb-4 transition-colors">Midnight Lavender</h3>
+                    <button class="px-6 py-2 bg-primaryDark dark:bg-gray-800 text-white rounded-full text-[9px] font-bold uppercase tracking-widest">Book Now</button>
+                </div>
+                <div class="w-32 h-32 rounded-3xl overflow-hidden shadow-lg group-hover:-translate-y-2 transition-transform duration-500">
+                    <img src="img/booking6.jpg" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Card 6: The Modern Arch (Glass) -->
+   <!-- 360px Optimized Professional Card -->
+<div class="md:col-span-3 lg:col-span-4 lg:row-span-1 group relative bg-white dark:bg-gray-700 rounded-[2rem] md:rounded-[3rem] overflow-hidden flex flex-col md:flex-row items-center p-4 sm:p-6 md:p-8 gap-5 md:gap-10 border border-white dark:border-gray-700 hover:shadow-2xl transition-all duration-500 shadow-sm">
+    
+    <!-- Image Area: Fully responsive for 360px screens -->
+    <div class="w-full md:w-1/3 md:max-w-[220px] lg:max-w-none aspect-[4/3] sm:aspect-[16/9] md:aspect-square lg:aspect-[4/3] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shrink-0 shadow-inner bg-studioBg dark:bg-gray-800 transition-colors">
+        <img src="img/booking7.jpg" 
+             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-105">
+    </div>
+
+    <!-- Content Area: Center aligned for mobile visibility -->
+    <div class="w-full md:flex-1 text-center md:text-left flex flex-col justify-center overflow-hidden">
+        
+        <!-- Badge -->
+        <div class="flex items-center justify-center md:justify-start mb-3 mt-2 md:mt-0">
+            <span class="px-3 py-1 bg-primary/10 dark:bg-primary/5 text-primary dark:text-gray-300 text-[8px] md:text-[9px] font-bold uppercase tracking-widest rounded-md transition-colors">
+                Limited Edition
+            </span>
+        </div>
+
+        <!-- Title: Balanced for 360px width -->
+        <h3 class="font-cormorant text-xl sm:text-3xl md:text-2xl lg:text-4xl text-primaryDark dark:text-white mb-2 md:mb-3 leading-tight font-semibold transition-colors">
+            Succulent Art <br class="md:hidden lg:block"> Heritage Edition
+        </h3>
+        
+        <!-- Description: Reduced for small mobile clarity -->
+        <p class="text-[11px] sm:text-sm md:text-[13px] lg:text-base text-[#9c6e7c] dark:text-gray-400 mb-4 md:mb-7 leading-relaxed max-w-prose mx-auto md:mx-0 px-2 md:px-0 transition-colors">
+            A limited collection featuring rare desert succulents with integrity and organic detail.
+        </p>
+        
+        <!-- Info Footer -->
+        <div class="flex items-center justify-center md:justify-start gap-2 md:gap-3 mt-auto pb-2 md:pb-0">
+            <span class="hidden md:block h-[1px] w-8 bg-primary/30"></span>
+            <span class="text-[9px] md:text-[10px] lg:text-xs font-bold uppercase tracking-[0.15em] text-primary/80 dark:text-gray-300/80 transition-colors">
+                15 Pieces Available 
+            </span>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+        <section class="py-12 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+                
+                <!-- 2. WORKSHOP BOOKING FORM -->
+                <div class="bg-white dark:bg-gray-800 p-8 md:p-12 rounded-[3rem] shadow-2xl shadow-pink-100/50 dark:shadow-none border border-pink-50 dark:border-gray-700 transition-colors duration-300">
+                    <h2 class="font-cormorant text-3xl text-primaryDark dark:text-white mb-8 transition-colors">Workshop Booking Form</h2>
+                    <form class="space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <input type="text" placeholder="Your Name" class="w-full px-6 py-4 bg-studioBg dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 rounded-2xl border border-transparent focus:border-primary outline-none transition-all">
+                            <input type="email" placeholder="Email Address" class="w-full px-6 py-4 bg-studioBg dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 rounded-2xl border border-transparent focus:border-primary outline-none transition-all">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <input type="tel" placeholder="Phone Number" class="w-full px-6 py-4 bg-studioBg dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 rounded-2xl border border-transparent focus:border-primary outline-none transition-all">
+                            <input type="date" class="w-full px-6 py-4 bg-studioBg dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 rounded-2xl border border-transparent focus:border-primary outline-none transition-all">
+                        </div>
+                        <select class="w-full px-6 py-4 bg-studioBg dark:bg-gray-700 dark:text-white rounded-2xl border border-transparent focus:border-primary outline-none transition-all text-[#9c6e7c] dark:text-gray-300">
+                            <option value="">Select Workshop Type</option>
+                            <option value="beginner">Beginner Flower Pressing</option>
+                            <option value="resin">Resin Floral Preservation</option>
+                            <option value="design">Advanced Botanical Layout</option>
+                        </select>
+                        <textarea rows="4" placeholder="Your Message or Special Requirements" class="w-full px-6 py-4 bg-studioBg dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 rounded-2xl border border-transparent focus:border-primary outline-none transition-all"></textarea>
+                        <button type="submit" class="w-full py-5 bg-primary text-white rounded-full font-bold uppercase tracking-widest hover:bg-primaryDark transition-all shadow-lg shadow-pink-200 dark:shadow-none">Confirm Booking</button>
+                    </form>
+                </div> 
+
+                <!-- Right Side Content -->
+                <div class="space-y-12">
+                    <!-- 3. PRIVATE CUSTOM ORDERS -->
+                    <div class="bg-primaryDark dark:bg-gray-800 p-10 rounded-[3rem] text-white relative overflow-hidden transition-colors duration-300">
+                        <i class="fas fa-hand-holding-heart absolute -right-4 -bottom-4 text-9xl opacity-10"></i>
+                        <h3 class="font-cormorant text-3xl mb-4">Private Custom Orders</h3>
+                        <p class="text-pink-100 mb-8 leading-relaxed">Planning to preserve a special memory? Book a one-on-one consultation for personalized pressed flower artwork tailored to your needs.</p>
+                        <a href="#" class="inline-block px-8 py-3 bg-white dark:bg-gray-800 text-primaryDark dark:text-white rounded-full font-bold text-sm uppercase tracking-widest hover:scale-105 transition-all">Schedule Call</a>
+                    </div>
+
+                    <!-- 4. EVENT SERVICES -->
+                    <div>
+                        <h3 class="font-cormorant text-3xl text-primaryDark dark:text-white mb-8 transition-colors">Event Services</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-pink-100 dark:border-gray-700 flex items-center gap-4 group hover:bg-primary transition-colors">
+                                <i class="fas fa-ring text-primary group-hover:text-white transition-colors"></i>
+                                <span class="font-bold text-sm group-hover:text-white dark:text-gray-200 transition-colors">Wedding Preservation</span>
+                            </div>
+                            <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-pink-100 dark:border-gray-700 flex items-center gap-4 group hover:bg-primary transition-colors">
+                                <i class="fas fa-home text-primary group-hover:text-white transition-colors"></i>
+                                <span class="font-bold text-sm group-hover:text-white dark:text-gray-200 transition-colors">Decor Keepsakes</span>
+                            </div>
+                            <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl border border-pink-100 dark:border-gray-700 flex items-center gap-4 group hover:bg-primary transition-colors">
+                                <i class="fas fa-gift text-primary group-hover:text-white transition-colors"></i>
+                                <span class="font-bold text-sm group-hover:text-white dark:text-gray-200 transition-colors">Personalized Gifting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. FAQ SECTION -->
+        <section class="py-24 px-6 bg-white dark:bg-black transition-colors duration-300">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-cormorant text-center text-4xl text-primaryDark dark:text-white mb-16 font-bold underline decoration-primary dark:decoration-gray-500 underline-offset-8 transition-colors">Frequently Asked Questions</h2>
+                
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <details class="group bg-studioBg dark:bg-gray-800 rounded-3xl p-6 border border-transparent open:border-pink-100 dark:open:border-gray-600 transition-all">
+                        <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-[#1f1015] dark:text-gray-200 transition-colors">
+                            How long does preservation take?
+                            <i class="fas fa-chevron-down text-primary group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-4 text-[#9c6e7c] dark:text-gray-400 text-sm leading-relaxed transition-colors">Usually, the entire pressing and drying process takes 4-6 weeks to ensure colors are perfectly retained without moisture.</p>
+                    </details>
+                    <!-- FAQ 2 -->
+                    <details class="group bg-studioBg dark:bg-gray-800 rounded-3xl p-6 border border-transparent open:border-pink-100 dark:open:border-gray-600 transition-all">
+                        <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-[#1f1015] dark:text-gray-200 transition-colors">
+                            Can I send dried flowers?
+                            <i class="fas fa-chevron-down text-primary group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-4 text-[#9c6e7c] dark:text-gray-400 text-sm leading-relaxed transition-colors">Yes, we can work with pre-dried flowers for certain resin art and frame layouts, though fresh is always best for standard pressing.</p>
+                    </details>
+                    <!-- FAQ 3 -->
+                    <details class="group bg-studioBg dark:bg-gray-800 rounded-3xl p-6 border border-transparent open:border-pink-100 dark:open:border-gray-600 transition-all">
+                        <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-[#1f1015] dark:text-gray-200 transition-colors">
+                            Do you ship internationally?
+                            <i class="fas fa-chevron-down text-primary group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-4 text-[#9c6e7c] dark:text-gray-400 text-sm leading-relaxed transition-colors">Yes, we offer worldwide shipping for all our botanical frames and resin pieces with secure, moisture-proof packaging.</p>
+                    </details>
+                    <!-- FAQ 4 -->
+                    <details class="group bg-studioBg dark:bg-gray-800 rounded-3xl p-6 border border-transparent open:border-pink-100 dark:open:border-gray-600 transition-all">
+                        <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-[#1f1015] dark:text-gray-200 transition-colors">
+                            How should I care for my artwork?
+                            <i class="fas fa-chevron-down text-primary group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-4 text-[#9c6e7c] dark:text-gray-400 text-sm leading-relaxed transition-colors">Keep your frame away from direct sunlight to prevent fading. A dry, cool place is perfect for your botanical treasures.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER CONTAINER -->
+    <div id="footer-root"></div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>

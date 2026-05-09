@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Flower & Botanical Studio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+     <link rel="icon" type="img/jpg" href="img/growwpark-logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="tailwind.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cormorant: ['"Cormorant Garamond"', 'serif'],
+                        jost: ['Jost', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#ec4899',
+                        primaryDark: '#be185d',
+                        studioBg: '#fef8f4',
+                        sage: '#edf1ed',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-jost bg-[#fef8f4] dark:bg-black text-[#1f1015] dark:text-gray-100 transition-colors duration-300">
+
+    <!-- NAVBAR CONTAINER -->
+    <div id="navbar-root"></div>
+
+    <main class="overflow-x-hidden">
+    <!-- 1. CONTACT HERO SECTION (With Entrance Animations) -->
+    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 z-0">
+            <img src="img/home2-2.jpg" 
+                 class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-tr from-sage/40 dark:from-black/40 via-white/40 dark:via-gray-800/40 to-studioBg/60 dark:to-black/60 transition-colors duration-300"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            
+
+            <!-- Main Heading with Slide-Up Animation -->
+            <h1 class="font-cormorant text-5xl md:text-6xl text-[#1f1015] dark:text-gray-100 leading-[1.1] mb-8 font-medium animate-[slideUp_1s_ease-out] transition-colors">
+                Let’s Create Something <br> 
+                <span class="italic text-primary dark:text-gray-300 transition-colors">Beautiful Together</span>
+            </h1>
+
+            <p class="text-[#5a3a45] dark:text-gray-300 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed opacity-0 animate-[fadeIn_1.5s_ease-out_forwards] transition-colors">
+                Have questions, custom artwork ideas, or workshop inquiries? Our botanical studio is here to bring your floral vision to life.
+            </p>
+
+            <div class="flex flex-wrap gap-5 justify-center opacity-0 animate-[fadeIn_2s_ease-out_forwards]">
+                <a href="#contact-form" class="px-10 py-4 bg-primary text-white rounded-full font-bold tracking-widest uppercase hover:scale-105 transition-all shadow-xl shadow-pink-100 dark:shadow-none">
+                    🌸 Contact Us
+                </a>
+                <a href="booking.html" class="px-10 py-4 border-2 border-primary dark:border-gray-700 text-primary dark:text-gray-300 rounded-full font-bold tracking-widest uppercase hover:bg-primary dark:hover:bg-gray-700 hover:text-white transition-all bg-white/30 dark:bg-gray-800/30 backdrop-blur-md">
+                    🌿 Book Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed & Professional Contact Form Section -->
+<section id="contact-form" class="py-24 px-4 md:px-6 bg-white dark:bg-black transition-colors duration-300">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-start">
+            
+            <!-- Left Side: Detailed Contact Info -->
+            <div class="space-y-10">
+                <div class="max-w-md">
+                    <span class="text-primary dark:text-gray-300 tracking-[0.3em] uppercase text-[10px] font-bold mb-4 block italic transition-colors">Reach Out</span>
+                    <h2 class="font-cormorant text-5xl md:text-6xl text-primaryDark dark:text-white mb-6 leading-tight transition-colors">Get in <span class="italic text-primary dark:text-gray-300 transition-colors">Touch</span></h2>
+                    <p class="text-[#9c6e7c] dark:text-gray-400 text-base md:text-lg leading-relaxed transition-colors">
+                        Whether you're interested in preserving a wedding bouquet or joining a workshop, our team is here to guide you through the process.
+                    </p>
+                </div>
+
+                <!-- Info Blocks -->
+                <div class="space-y-8">
+                    <!-- Location -->
+                    <div class="flex items-start gap-6 group">
+                        <div class="w-14 h-14 shrink-0 bg-studioBg dark:bg-gray-800 rounded-2xl flex items-center justify-center text-primary dark:text-gray-300 group-hover:bg-primary dark:group-hover:bg-pink-500 group-hover:text-white transition-all duration-500 shadow-sm">
+                            <i class="fas fa-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest text-primaryDark dark:text-white mb-1 transition-colors">Our Studio</h4>
+                            <p class="text-sm text-[#9c6e7c] dark:text-gray-400 leading-relaxed transition-colors">123 Botanical Lane, Art District,<br>Tamil Nadu, India - 600001</p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex items-start gap-6 group">
+                        <div class="w-14 h-14 shrink-0 bg-studioBg dark:bg-gray-800 rounded-2xl flex items-center justify-center text-primary dark:text-gray-300 group-hover:bg-primary dark:group-hover:bg-pink-500 group-hover:text-white transition-all duration-500 shadow-sm">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest text-primaryDark dark:text-white mb-1 transition-colors">Email Support</h4>
+                            <p class="text-sm text-[#9c6e7c] dark:text-gray-400 transition-colors">hello@studiobotanica.com</p>
+                            <p class="text-[10px] text-primary dark:text-gray-300 mt-1 italic font-medium transition-colors">Avg response time: 24 hours</p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex items-start gap-6 group">
+                        <div class="w-14 h-14 shrink-0 bg-studioBg dark:bg-gray-800 rounded-2xl flex items-center justify-center text-primary dark:text-gray-300 group-hover:bg-primary dark:group-hover:bg-pink-500 group-hover:text-white transition-all duration-500 shadow-sm">
+                            <i class="fas fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm uppercase tracking-widest text-primaryDark dark:text-white mb-1 transition-colors">Call Us</h4>
+                            <p class="text-sm text-[#9c6e7c] dark:text-gray-400 transition-colors">+91 98765 43210</p>
+                            <p class="text-[10px] text-[#9c6e7c] dark:text-gray-400 mt-1 italic transition-colors">Mon-Fri: 9 AM - 6 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Detailed Input Form -->
+            <div class="bg-studioBg dark:bg-gray-800 p-8 md:p-12 rounded-[3.5rem] border border-pink-50 dark:border-gray-700 shadow-2xl shadow-pink-100/40 dark:shadow-none relative transition-colors duration-300">
+                <!-- Decorative element -->
+                <div class="absolute -top-4 -right-4 w-20 h-20 bg-primary/5 rounded-full blur-2xl"></div>
+                
+                <h3 class="font-cormorant text-3xl text-primaryDark dark:text-white mb-8 transition-colors">Send a Message</h3>
+                
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Full Name -->
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold uppercase tracking-widest text-primaryDark/60 dark:text-white/60 ml-2 transition-colors">Full Name</label>
+                            <div class="relative">
+                                <i class="fas fa-user absolute left-5 top-1/2 -translate-y-1/2 text-primary/40 text-sm"></i>
+                                <input type="text" placeholder="Arulprakash S" 
+                                    class="w-full pl-12 pr-6 py-4 rounded-2xl bg-white dark:bg-gray-700 border border-transparent focus:border-primary/30 outline-none transition-all shadow-sm placeholder:text-[#9c6e7c]/40 dark:placeholder:text-gray-400 text-primaryDark dark:text-white font-medium">
+                            </div>
+                        </div>
+                        <!-- Email -->
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold uppercase tracking-widest text-primaryDark/60 dark:text-white/60 ml-2 transition-colors">Email Address</label>
+                            <div class="relative">
+                                <i class="fas fa-at absolute left-5 top-1/2 -translate-y-1/2 text-primary/40 text-sm"></i>
+                                <input type="email" placeholder="example@email.com" 
+                                    class="w-full pl-12 pr-6 py-4 rounded-2xl bg-white dark:bg-gray-700 border border-transparent focus:border-primary/30 outline-none transition-all shadow-sm placeholder:text-[#9c6e7c]/40 dark:placeholder:text-gray-400 text-primaryDark dark:text-white font-medium">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subject/Inquiry Type -->
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase tracking-widest text-primaryDark/60 dark:text-white/60 ml-2 transition-colors">How can we help?</label>
+                        <div class="relative">
+                            <i class="fas fa-tag absolute left-5 top-1/2 -translate-y-1/2 text-primary/40 text-sm pointer-events-none"></i>
+                            <select class="w-full pl-12 pr-6 py-4 rounded-2xl bg-white dark:bg-gray-700 border border-transparent focus:border-primary/30 outline-none appearance-none transition-all shadow-sm text-primaryDark dark:text-white font-medium cursor-pointer">
+                                <option value="" disabled selected>Select Inquiry Type</option>
+                                <option value="custom">Custom Flower Preservation</option>
+                                <option value="workshop">Workshop Enrollment</option>
+                                <option value="gift">Personalized Gifting</option>
+                                <option value="other">General Inquiry</option>
+                            </select>
+                            <i class="fas fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-primary/40 text-xs pointer-events-none"></i>
+                        </div>
+                    </div>
+
+                    <!-- Message Message -->
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase tracking-widest text-primaryDark/60 dark:text-white/60 ml-2 transition-colors">Your Message</label>
+                        <div class="relative">
+                            <i class="fas fa-comment-dots absolute left-5 top-5 text-primary/40 text-sm"></i>
+                            <textarea rows="5" placeholder="Share your floral vision or questions here..." 
+                                class="w-full pl-12 pr-6 py-4 rounded-2xl bg-white dark:bg-gray-700 border border-transparent focus:border-primary/30 outline-none transition-all shadow-sm placeholder:text-[#9c6e7c]/40 dark:placeholder:text-gray-400 text-primaryDark dark:text-white font-medium resize-none"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button class="w-full py-5 bg-primary text-white rounded-full font-bold uppercase tracking-widest hover:bg-primaryDark transition-all shadow-lg shadow-pink-200 dark:shadow-none flex items-center justify-center gap-3 group">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- 3. STUDIO LOCATION (MAP SECTION) -->
+    <section class="py-12 px-4 md:px-6">
+        <div class="max-w-7xl mx-auto overflow-hidden rounded-[3rem] shadow-2xl border-8 border-white dark:border-gray-800 transition-colors duration-300">
+            <div class="w-full h-[450px] grayscale hover:grayscale-0 transition-all duration-700">
+                <!-- Replace this iframe with your actual studio location -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.88653926!2d80.0689245228515!3d12.9202702534575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d333f%3A0x442a71e6e0f719b!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1715160000000!5m2!1sen!2sin" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. WORKING HOURS & FAQ (Extra Section 1) -->
+    <section class="py-24 px-4 md:px-6 bg-studioBg/30 dark:bg-black/30 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div class="bg-white dark:bg-gray-800 p-12 rounded-[3rem] border border-pink-50 dark:border-gray-700 transition-colors duration-300">
+                <h3 class="font-cormorant text-3xl text-primaryDark dark:text-white mb-8 transition-colors">Studio Hours</h3>
+                <ul class="space-y-4">
+                    <li class="flex justify-between border-b border-dashed border-pink-100 dark:border-gray-700 pb-2 transition-colors"><span class="text-primaryDark dark:text-white font-bold transition-colors">Mon - Fri</span> <span class="text-[#9c6e7c] dark:text-gray-400 transition-colors">9:00 AM - 6:00 PM</span></li>
+                    <li class="flex justify-between border-b border-dashed border-pink-100 dark:border-gray-700 pb-2 transition-colors"><span class="text-primaryDark dark:text-white font-bold transition-colors">Saturday</span> <span class="text-[#9c6e7c] dark:text-gray-400 transition-colors">10:00 AM - 4:00 PM</span></li>
+                    <li class="flex justify-between text-primary dark:text-gray-300 font-bold transition-colors"><span>Sunday</span> <span>Closed</span></li>
+                </ul>
+            </div>
+            <div class="flex flex-col justify-center">
+                <span class="text-primary dark:text-gray-300 tracking-widest text-[10px] font-bold uppercase mb-4 transition-colors">Quick Help</span>
+                <h3 class="font-cormorant text-4xl text-primaryDark dark:text-white mb-6 transition-colors">Common Questions</h3>
+                <p class="text-[#9c6e7c] dark:text-gray-400 mb-6 transition-colors">We respond to all inquiries within 24 hours. For wedding emergencies, please call our studio directly.</p>
+                <a href="#" class="text-primary dark:text-gray-300 font-bold underline underline-offset-8 decoration-pink-200 dark:decoration-gray-500 transition-colors">Visit our Full FAQ</a>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <!-- 6. NEWSLETTER (Extra Section 3) -->
+    <section class="py-20 px-6 bg-primaryDark dark:bg-gray-800 mx-6 rounded-[4rem] mb-24 relative overflow-hidden transition-colors duration-300">
+        <div class="relative z-10 text-center text-white max-w-2xl mx-auto">
+            <h2 class="font-cormorant text-4xl mb-6 italic">Join our Botanical Circle</h2>
+            <p class="opacity-70 mb-8 text-sm">Sign up for monthly tips on floral preservation and workshop early access.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <input type="email" placeholder="Your email address" class="flex-1 px-8 py-4 rounded-full bg-white/10 border border-white/20 text-white outline-none focus:bg-white/20 transition-all">
+                <button class="px-10 py-4 bg-white dark:bg-gray-800 text-primaryDark dark:text-white rounded-full font-bold uppercase tracking-widest text-xs hover:scale-105 transition-all">Join</button>
+            </div>
+        </div>
+    </section>
+
+   
+</main>
+
+<style>
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
+
+    <!-- FOOTER CONTAINER -->
+    <div id="footer-root"></div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>

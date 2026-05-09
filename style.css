@@ -1,0 +1,380 @@
+/* ================================================================
+   style.css — Flower & Botanical
+   Global tokens, resets, hero, and page layout
+================================================================ */
+
+/* ----------------------------------------------------------------
+   GOOGLE FONTS
+---------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+/* ----------------------------------------------------------------
+   CSS CUSTOM PROPERTIES
+---------------------------------------------------------------- */
+:root {
+  /* Brand */
+  --pink:            #e8547a;
+  --pink-dark:       #c93d62;
+  --pink-deep:       #a02a4a;
+  --pink-light:      #f9d0dc;
+  --pink-soft:       #fef0f4;
+  --pink-glow:       rgba(232, 84, 122, 0.22);
+  --pink-border:     rgba(232, 84, 122, 0.28);
+
+  /* Surfaces */
+  --body-bg:         #fdf8f5;
+  --surface-1:       #ffffff;
+  --surface-2:       #fef5f0;
+
+  /* Text */
+  --text-primary:    #1a0d12;
+  --text-secondary:  #52293a;
+  --text-muted:      #9c6070;
+  --text-subtle:     #c49daa;
+
+  /* Nav */
+  --nav-bg:          rgba(255, 251, 249, 0.92);
+  --nav-border:      rgba(232, 84, 122, 0.22);
+  --nav-shadow:      0 4px 24px rgba(26, 13, 18, 0.06);
+  --nav-shadow-lg:   0 8px 40px rgba(26, 13, 18, 0.12);
+
+  /* Sidebar */
+  --sidebar-bg:      #fffbf9;
+  --sidebar-border:  rgba(232, 84, 122, 0.15);
+
+  /* Dropdown */
+  --dropdown-bg:     rgba(255, 251, 249, 0.98);
+
+  /* Misc */
+  --radius-sm:       10px;
+  --radius-md:       18px;
+  --radius-lg:       28px;
+  --radius-pill:     100px;
+  --ease:            cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring:     cubic-bezier(0.34, 1.56, 0.64, 1);
+  --t:               0.26s;
+}
+
+html.dark {
+  --body-bg:         #000000;
+  --surface-1:       #111827;
+  --surface-2:       #1f2937;
+
+  --text-primary:    #ffffff;
+  --text-secondary:  #d1d5db;
+  --text-muted:      #9ca3af;
+  --text-subtle:     #6b7280;
+
+  --nav-bg:          rgba(0, 0, 0, 0.94);
+  --nav-border:      rgba(55, 65, 81, 0.5);
+  --nav-shadow:      0 4px 24px rgba(0, 0, 0, 0.5);
+  --nav-shadow-lg:   0 8px 40px rgba(0, 0, 0, 0.8);
+
+  --sidebar-bg:      #111827;
+  --sidebar-border:  rgba(55, 65, 81, 0.5);
+  --dropdown-bg:     rgba(17, 24, 39, 0.98);
+
+  --pink-soft:       rgba(255, 255, 255, 0.05);
+  --pink-light:      rgba(255, 255, 255, 0.1);
+}
+
+/* ----------------------------------------------------------------
+   RESET & BASE
+---------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  background: var(--body-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background var(--t) var(--ease), color var(--t) var(--ease);
+}
+
+body.nav-open { overflow: hidden; }
+
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; }
+img { max-width: 100%; display: block; }
+
+/* ----------------------------------------------------------------
+   HERO SECTION
+---------------------------------------------------------------- */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 160px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft radial backgrounds */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 700px;
+  background: radial-gradient(ellipse at center, rgba(232,84,122,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 280px;
+  background: linear-gradient(to top, var(--body-bg), transparent);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 22px;
+  max-width: 700px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--pink-soft);
+  border: 1px solid var(--pink-border);
+  border-radius: var(--radius-pill);
+  padding: 7px 18px 7px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pink);
+  animation: fadeSlideUp 0.8s var(--ease) both;
+}
+
+.hero-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pink);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 9vw, 104px);
+  font-weight: 500;
+  line-height: 1.02;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  animation: fadeSlideUp 0.8s var(--ease) 0.1s both;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--pink);
+  font-weight: 400;
+}
+
+.hero-rule {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: fadeSlideUp 0.8s var(--ease) 0.15s both;
+}
+
+.hero-rule::before,
+.hero-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--pink-border));
+}
+
+.hero-rule::after {
+  background: linear-gradient(to left, transparent, var(--pink-border));
+}
+
+.hero-rule-icon {
+  font-size: 14px;
+  color: var(--pink);
+  opacity: 0.7;
+}
+
+.hero-subtitle {
+  font-size: 15.5px;
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 400px;
+  line-height: 1.85;
+  animation: fadeSlideUp 0.8s var(--ease) 0.2s both;
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeSlideUp 0.8s var(--ease) 0.28s both;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 30px;
+  border-radius: var(--radius-pill);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.22s var(--ease-spring), box-shadow 0.22s var(--ease), background 0.2s;
+}
+
+.btn-primary {
+  background: var(--pink);
+  color: #fff;
+  box-shadow: 0 6px 22px var(--pink-glow);
+}
+
+.btn-primary:hover {
+  background: var(--pink-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px var(--pink-glow);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--pink);
+  border: 1.5px solid var(--pink-border);
+}
+
+.btn-ghost:hover {
+  background: var(--pink-soft);
+  transform: translateY(-3px);
+  border-color: var(--pink);
+}
+
+/* ----------------------------------------------------------------
+   FLOATING DECO PETALS (hero background detail)
+---------------------------------------------------------------- */
+.petal {
+  position: absolute;
+  border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.petal-1 {
+  width: 320px; height: 320px;
+  background: var(--pink);
+  top: 8%; left: -6%;
+  animation: floatPetal 18s ease-in-out infinite alternate;
+}
+
+.petal-2 {
+  width: 220px; height: 220px;
+  background: var(--pink-dark);
+  top: 20%; right: -4%;
+  animation: floatPetal 22s ease-in-out 4s infinite alternate-reverse;
+}
+
+.petal-3 {
+  width: 160px; height: 160px;
+  background: var(--pink);
+  bottom: 15%; left: 10%;
+  animation: floatPetal 16s ease-in-out 2s infinite alternate;
+}
+
+/* ----------------------------------------------------------------
+   ANIMATIONS
+---------------------------------------------------------------- */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+@keyframes floatPetal {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to   { transform: translate(30px, -40px) rotate(25deg); }
+}
+
+/* ----------------------------------------------------------------
+   TOGGLE PILL (reusable)
+---------------------------------------------------------------- */
+.toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  background: var(--pink-soft);
+  border: 1px solid var(--pink-border);
+  border-radius: var(--radius-pill);
+  padding: 3px;
+  gap: 2px;
+}
+
+.toggle-pill button {
+  width: 32px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 11.5px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.toggle-pill button.active {
+  background: var(--pink);
+  color: #fff;
+}
+
+/* ----------------------------------------------------------------
+   UTILITY
+---------------------------------------------------------------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Page Not Found - Botanica</title>
+    <link rel="icon" type="img/jpg" href="img/growwpark-logo.jpg">
+    <script src="tailwind.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #9c6e7c;
+            --secondary: #5a3a45;
+            --bg-light: #fcf9f8;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden; /* Prevent scrolling during animation */
+        }
+
+        /* Floating Animation for Flowers */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .flower-animate {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .petal-1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .petal-2 { top: 20%; right: 15%; animation-delay: 1s; scale: 1.5; }
+        .petal-3 { bottom: 15%; left: 20%; animation-delay: 2s; opacity: 0.6; }
+        .petal-4 { bottom: 10%; right: 10%; animation-delay: 1.5s; }
+
+        /* 404 Text Glow */
+        .text-glow {
+            text-shadow: 0 0 30px rgba(156, 110, 124, 0.2);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center relative px-6">
+
+    <!-- Background Animated Elements -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <i class="fas fa-leaf flower-animate petal-1 absolute text-primary/20 text-4xl"></i>
+        <i class="fas fa-seedling flower-animate petal-2 absolute text-primary/10 text-6xl"></i>
+        <i class="fas fa-wind flower-animate petal-3 absolute text-secondary/10 text-5xl"></i>
+        <i class="fas fa-spa flower-animate petal-4 absolute text-primary/20 text-4xl"></i>
+        
+        <!-- Large Background Circle -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="relative z-10 text-center max-w-2xl">
+        <!-- 404 Header -->
+        <div class="mb-8">
+            <h1 class="font-cormorant text-[120px] md:text-[180px] leading-none font-bold text-secondary/10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full select-none">
+                404
+            </h1>
+            <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center mx-auto shadow-2xl shadow-pink-100 relative mb-10 flower-animate">
+                <i class="fas fa-scissors text-primary text-5xl"></i> <!-- Snipped flower icon -->
+            </div>
+        </div>
+
+        <!-- Content Card -->
+        <div class="glass-card p-8 md:p-12 rounded-[3rem] shadow-xl">
+            <h2 class="font-cormorant text-4xl md:text-5xl font-bold text-secondary mb-4">
+                The bloom has <span class="italic text-primary">withered...</span>
+            </h2>
+            <p class="text-[#9c6e7c] text-sm md:text-base mb-10 leading-relaxed">
+                It seems the page you are looking for has either drifted away or never sprouted. Let's guide you back to our garden.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="index.html" class="w-full sm:w-auto px-10 py-4 bg-primary text-black rounded-full font-bold text-xs uppercase tracking-widest hover:bg-secondary transition-all shadow-lg flex items-center justify-center gap-3">
+                    <i class="fas fa-home"></i> Return Home
+                </a>
+                <a href="collections.html" class="w-full sm:w-auto px-10 py-4 border border-primary text-primary rounded-full font-bold text-xs uppercase tracking-widest hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-3">
+                    View Gallery
+                </a>
+            </div>
+        </div>
+
+        <!-- Quote Footer -->
+        <p class="mt-12 text-[10px] uppercase tracking-[0.4em] text-gray-400">
+            "In every walk with nature, one receives far more than he seeks."
+        </p>
+    </div>
+
+    <!-- Script for subtle mouse movement effect -->
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) / 50;
+            const moveY = (e.clientY - window.innerHeight / 2) / 50;
+            document.querySelector('.relative.z-10').style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+    </script>
+</body>
+</html>

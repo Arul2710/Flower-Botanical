@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower & Botanical</title>
+    <link rel="icon" type="img/jpg" href="img/growwpark-logo.jpg">
+    <script src="tailwind.js"></script>
+    <!-- Font Awesome (required for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cormorant: ['"Cormorant Garamond"', 'serif'],
+                        jost: ['Jost', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#ec4899',
+                        primaryDark: '#be185d',
+                        softPink: '#fdf2f8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-[#fef8f4] dark:bg-black text-[#1f1015] dark:text-gray-100 transition-colors duration-300">
+
+    <!-- NAVBAR CONTAINER - Add this! -->
+    <div id="navbar-root"></div>
+
+   <!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center  ">
+            <div class="absolute inset-0 z-0">
+                <img src="img/home1.png" class="w-full h-full object-cover opacity-30">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#fef8f4]/40 dark:via-black/40 to-[#fef8f4] dark:to-black transition-colors duration-300"></div>
+            </div>
+
+            <div class="absolute inset-0 pointer-events-none opacity-40">
+                <div class="absolute top-1/4 left-10 floating text-primary"><i class="fas fa-seedling fa-3x"></i></div>
+                <div class="absolute bottom-1/4 right-10 floating text-primary" style="animation-delay: 2s;"><i class="fas fa-leaf fa-3x"></i></div>
+            </div>
+
+            <div class="relative z-10 text-center px-6 max-w-4xl">
+                <span class="inline-block text-xs font-bold tracking-[0.3em] uppercase text-primaryDark dark:text-gray-300 mb-4 transition-colors">Handcrafted in Our Studio</span>
+                <h1 class="font-cormorant text-5xl md:text-8xl text-[#1f1015] dark:text-white leading-[1.1] mb-6 font-medium transition-colors">
+                    Preserving Nature’s <br> <span class="italic text-primary">Beauty Forever</span>
+                </h1>
+                <p class="text-[#5a3a45] dark:text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed transition-colors">
+                    Handcrafted pressed flower artworks inspired by nature, memories, and timeless elegance.
+                </p>
+                <div class="flex flex-wrap gap-5 justify-center">
+                    <a href="artworks.html" class="px-10 py-4 bg-primary text-white rounded-full font-bold tracking-widest uppercase hover:bg-primaryDark transition-all shadow-xl shadow-pink-100">Explore Artworks</a>
+                    <a href="booking.html" class="px-10 py-4 border-2 border-primary text-primary dark:text-gray-300 rounded-full font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all bg-white/40 dark:bg-gray-800/40 backdrop-blur-md">Book Workshop</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. FEATURED COLLECTION -->
+        <section class="py-24 px-6 bg-white dark:bg-gray-800 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <h2 class="font-cormorant text-4xl md:text-5xl text-primaryDark dark:text-white font-bold transition-colors">Featured Botanical Collection</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Item 1 -->
+                    <div class="group bg-softPink/30 dark:bg-gray-700/50 rounded-[2.5rem] p-6 border border-pink-50 dark:border-gray-700 transition-all hover:shadow-2xl hover:-translate-y-2">
+                        <div class="overflow-hidden rounded-[2rem] mb-6 aspect-square">
+                            <img src="img/home2.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#1f1015] dark:text-white mb-2 transition-colors">Wild Daisy Frame</h3>
+                        <p class="text-[#9c6e7c] dark:text-gray-300 text-sm mb-6 leading-relaxed transition-colors">Carefully preserved wild daisies arranged in a minimal handmade wooden frame.</p>
+                        <div class="flex items-center justify-between border-t border-pink-100 dark:border-gray-700 pt-6 transition-colors">
+                            <span class="text-xl font-bold text-primary dark:text-gray-300">RC 45.00</span>
+                            <a href="#" class="px-6 py-2 bg-white dark:bg-gray-800 border border-primary text-primary dark:text-gray-300 rounded-full text-xs font-bold hover:bg-primary hover:text-white transition-all">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="group bg-softPink/30 dark:bg-gray-700/50 rounded-[2.5rem] p-6 border border-pink-50 dark:border-gray-700 transition-all hover:shadow-2xl hover:-translate-y-2">
+                        <div class="overflow-hidden rounded-[2rem] mb-6 aspect-square">
+                            <img src="img/home3.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#1f1015] dark:text-white mb-2 transition-colors">Vintage Rose Art</h3>
+                        <p class="text-[#9c6e7c] dark:text-gray-300 text-sm mb-6 leading-relaxed transition-colors">Deep red roses preserved with traditional methods to keep their natural essence.</p>
+                        <div class="flex items-center justify-between border-t border-pink-100 dark:border-gray-700 pt-6 transition-colors">
+                            <span class="text-xl font-bold text-primary dark:text-gray-300">RC 62.00</span>
+                            <a href="#" class="px-6 py-2 bg-white dark:bg-gray-800 border border-primary text-primary dark:text-gray-300 rounded-full text-xs font-bold hover:bg-primary hover:text-white transition-all">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="group bg-softPink/30 dark:bg-gray-700/50 rounded-[2.5rem] p-6 border border-pink-50 dark:border-gray-700 transition-all hover:shadow-2xl hover:-translate-y-2">
+                        <div class="overflow-hidden rounded-[2rem] mb-6 aspect-square">
+                            <img src="img/home4.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <h3 class="text-xl font-bold text-[#1f1015] dark:text-white mb-2 transition-colors">Lavender Field</h3>
+                        <p class="text-[#9c6e7c] dark:text-gray-300 text-sm mb-6 leading-relaxed transition-colors">Scented lavender sprigs arranged in a beautiful glass floating frame.</p>
+                        <div class="flex items-center justify-between border-t border-pink-100 dark:border-gray-700 pt-6 transition-colors">
+                            <span class="text-xl font-bold text-primary dark:text-gray-300">RC 38.00</span>
+                            <a href="#" class="px-6 py-2 bg-white dark:bg-gray-800 border border-primary text-primary dark:text-gray-300 rounded-full text-xs font-bold hover:bg-primary hover:text-white transition-all">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<!-- Studio Craftsmanship & Process Section -->
+<section class="py-24 px-5 bg-gray-50 dark:bg-black transition-colors duration-300 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            
+            <!-- Left: Image Composition -->
+            <div class="w-full lg:w-1/2 relative">
+                <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <img src="img/home5.png" 
+                         alt="Flower Pressing Process" 
+                         class="w-full h-[500px] object-cover">
+                </div>
+                <!-- Decorative Elements -->
+                <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-[#fce7f3] dark:bg-gray-800/20 rounded-full -z-10 opacity-50 blur-3xl transition-colors"></div>
+                <div class="absolute -top-10 -left-10 w-48 h-48 border-2 border-dashed border-[#ec4899] dark:border-gray-700 rounded-full -z-10 animate-[spin_20s_linear_infinite] transition-colors"></div>
+            </div>
+
+            <!-- Right: Content & Steps -->
+            <div class="w-full lg:w-1/2">
+                <h2 class="font-['Cormorant_Garamond'] text-4xl md:text-5xl text-[#be185d] dark:text-white mb-6 font-semibold leading-tight transition-colors">
+                    The Fine Art of <br> <span class="italic text-[#ec4899] dark:text-gray-300">Botanical Preservation</span>
+                </h2>
+                <p class="text-[#9c6e7c] dark:text-gray-300 text-lg mb-10 leading-relaxed transition-colors">
+                    At our studio, we transform fleeting blossoms into timeless heirlooms. Every petal is treated with care through our signature preservation method.
+                </p>
+
+                <!-- Process Steps -->
+                <div class="space-y-8">
+                    <!-- Step 1 -->
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#fce7f3] dark:bg-gray-800 flex items-center justify-center text-[#ec4899] dark:text-gray-300 font-bold group-hover:bg-[#ec4899] group-hover:text-white transition-colors">
+                            01
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-[#1f1015] dark:text-white mb-1 transition-colors">Traditional Pressing</h4>
+                            <p class="text-[#9c6e7c] dark:text-gray-400 text-sm italic transition-colors">Slow-moisture extraction to retain the flower's organic pigment and structure.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#fce7f3] dark:bg-gray-800 flex items-center justify-center text-[#ec4899] dark:text-gray-300 font-bold group-hover:bg-[#ec4899] group-hover:text-white transition-colors">
+                            02
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-[#1f1015] dark:text-white mb-1 transition-colors">Artistic Composition</h4>
+                            <p class="text-[#9c6e7c] dark:text-gray-400 text-sm italic transition-colors">Each piece is hand-arranged into balanced, ethereal botanical layouts.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#fce7f3] dark:bg-gray-800 flex items-center justify-center text-[#ec4899] dark:text-gray-300 font-bold group-hover:bg-[#ec4899] group-hover:text-white transition-colors">
+                            03
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-[#1f1015] dark:text-white mb-1 transition-colors">Museum-Grade Framing</h4>
+                            <p class="text-[#9c6e7c] dark:text-gray-400 text-sm italic transition-colors">Sealed in archival glass to protect your art from UV rays and time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <a href="booking.html" class="inline-block px-8 py-4 border-2 border-[#ec4899] text-[#ec4899] rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#ec4899] hover:text-white transition-all">
+                        Learn Our Secret Techniques
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+     <!-- 3. ABOUT STUDIO PREVIEW -->
+<section class="py-24 px-6 bg-[#fffafb] dark:bg-gray-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        
+        <!-- Left Side: Clean 3-Image Grid (No Tilt) -->
+        <div class="w-full lg:w-1/2 relative">
+            <div class="flex gap-4 items-center">
+                <!-- 1. Left Big Image (Perfectly Straight) -->
+                <div class="w-1/2">
+                    <img src="img/home6.png" 
+                         class="rounded-3xl shadow-xl w-full h-[450px] object-cover border-4 border-white transition-transform duration-500 hover:scale-[1.02]">
+                </div>
+
+                <!-- Right Side: Two Stacked Images (Perfectly Straight) -->
+                <div class="w-1/2 flex flex-col gap-4">
+                    <!-- 2. Right Top Image -->
+                    <img src="img/home7.png" 
+                         class="rounded-3xl shadow-xl w-full h-52 object-cover border-4 border-white transition-transform duration-500 hover:scale-[1.02]">
+                    
+                    <!-- 3. Right Bottom Image -->
+                    <img src="img/home8.png" 
+                         class="rounded-3xl shadow-xl w-full h-52 object-cover border-4 border-white transition-transform duration-500 hover:scale-[1.02]">
+                </div>
+            </div>
+            
+            <!-- Background Decorative Elements -->
+            <div class="absolute -z-10 -top-10 -left-10 w-64 h-64 bg-primary/10 dark:bg-primary/5 blur-3xl rounded-full transition-colors"></div>
+        </div>
+
+        <!-- Right Side: Content -->
+        <div class="w-full lg:w-1/2">
+            <span class="text-primary dark:text-gray-300 font-bold tracking-[0.2em] uppercase text-sm mb-4 block transition-colors">Our Essence</span>
+            <h2 class="font-cormorant text-4xl md:text-5xl text-primaryDark dark:text-white mb-8 font-bold leading-tight transition-colors">Behind the Blossoms</h2>
+            
+            <p class="text-[#5a3a45] dark:text-gray-300 text-lg leading-relaxed mb-8 italic font-medium border-l-4 border-primary/30 pl-6 transition-colors">
+                “At Pressed Flower & Botanical Art Studio, every flower tells a story. We transform natural blooms into timeless artworks filled with emotion, beauty, and delicate craftsmanship.”
+            </p>
+            
+            <p class="text-[#9c6e7c] dark:text-gray-400 mb-10 leading-relaxed text-base transition-colors">
+                Our studio specializes in the ancient art of flower pressing, combined with modern design aesthetics to bring nature into your living spaces forever. Each piece is hand-curated to preserve the soul of the botanical world.
+            </p>
+            
+            <a href="about.html" class="group relative inline-block px-8 py-3 font-bold tracking-widest uppercase text-primary transition-all">
+                <span class="relative z-10">Our Story</span>
+                <div class="absolute bottom-0 left-0 w-full h-[2px] bg-primary transition-all group-hover:h-[4px]"></div>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+       
+
+        <!-- 5. TESTIMONIALS -->
+        <section class="py-24 px-6 bg-[#fffafb] dark:bg-black transition-colors duration-300">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="font-cormorant text-center text-4xl md:text-5xl text-primaryDark dark:text-white mb-20 font-bold transition-colors">Kind Words from Collectors</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="bg-white dark:bg-gray-800 p-12 rounded-[3rem] border border-pink-50 dark:border-gray-700 relative shadow-sm transition-colors">
+                        <i class="fas fa-quote-left absolute top-8 left-8 text-softPink dark:text-gray-700 text-6xl transition-colors"></i>
+                        <p class="text-[#5a3a45] dark:text-gray-300 text-lg italic mb-8 relative z-10 leading-relaxed transition-colors">
+                            “The artwork looked magical and emotional. It was the perfect gift for my anniversary, preserving our wedding blooms so beautifully!”
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">SM</div>
+                            <h5 class="font-bold text-primary dark:text-gray-300 transition-colors">Sophia M.</h5>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-12 rounded-[3rem] border border-pink-50 dark:border-gray-700 relative shadow-sm transition-colors">
+                        <i class="fas fa-quote-left absolute top-8 left-8 text-softPink dark:text-gray-700 text-6xl transition-colors"></i>
+                        <p class="text-[#5a3a45] dark:text-gray-300 text-lg italic mb-8 relative z-10 leading-relaxed transition-colors">
+                            “Attending the workshop was so therapeutic. I learned how to press my own garden flowers and the result is stunning!”
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-primaryDark rounded-full flex items-center justify-center text-white font-bold">JL</div>
+                            <h5 class="font-bold text-primary dark:text-gray-300 transition-colors">James L.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<section class="workshop-cta py-16 px-5 text-center bg-gradient-to-br from-[#fce7f3] to-white dark:from-gray-800 dark:to-black transition-colors duration-300">
+    <div class="max-w-3xl mx-auto p-10 border-2 border-dashed border-[#ec4899] dark:border-gray-700 rounded-[30px] transition-colors">
+        <h2 class="font-cormorant text-4xl text-[#be185d] dark:text-white transition-colors">Join Our Next Workshop</h2>
+        <p class="text-[#5a3a45] dark:text-gray-300 my-4 mb-6 transition-colors">Learn the secret techniques of botanical art from professional artists.</p>
+        <a href="booking.html" class="inline-block px-8 py-3 bg-primary text-white rounded-full uppercase tracking-widest text-xs font-bold hover:bg-primaryDark transition-colors">Reserve Your Spot</a>
+    </div>
+</section>
+
+    <!-- FOOTER CONTAINER -->
+    <div id="footer-root"></div>
+
+    <!-- NAVBAR SCRIPT - Add this before closing body -->
+    <script src="navbar.js"></script>
+    <!-- FOOTER SCRIPT -->
+    <script src="footer.js"></script>
+</body>
+</html>

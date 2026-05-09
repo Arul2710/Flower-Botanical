@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artworks — Flower & Botanical Studio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+     <link rel="icon" type="img/jpg" href="img/growwpark-logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="tailwind.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cormorant: ['"Cormorant Garamond"', 'serif'],
+                        jost: ['Jost', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#ec4899',
+                        primaryDark: '#be185d',
+                        studioBg: '#fef8f4',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-jost bg-[#fef8f4] dark:bg-black text-[#1f1015] dark:text-gray-100 transition-colors duration-300">
+
+    <!-- NAVBAR CONTAINER -->
+    <div id="navbar-root"></div>
+
+    <main>
+        <!-- 1. ART GALLERY HERO -->
+        <!-- NATURE CAPTURED HERO SECTION -->
+<section class="relative py-32 md:py-48 px-6 overflow-hidden flex items-center justify-center">
+    <!-- Background Image with Parallax effect (Optional) -->
+    <div class="absolute inset-0 z-0">
+        <img src="img/artwork1.jpg" 
+             class="w-full h-full object-cover opacity-30" 
+             alt="Botanical Background">
+        <!-- Overlay: Text clear-ah theriya idhu romba mukkiyam -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#fef8f4]/40 dark:via-black/40 to-[#fef8f4] dark:to-black transition-colors duration-300"></div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="relative z-10 max-w-7xl mx-auto text-center">
+        
+
+        <h1 class="font-cormorant text-6xl md:text-8xl text-primaryDark dark:text-white mb-8 leading-tight font-bold transition-colors">
+            Nature Captured <br> 
+            <span class="italic text-primary dark:text-gray-300 drop-shadow-sm transition-colors">in Every Frame</span>
+        </h1>
+
+        <p class="max-w-2xl mx-auto text-[#5a3a45] dark:text-gray-300 text-lg md:text-xl font-medium leading-relaxed transition-colors">
+            Bringing the soul of the botanical world into your sanctuary through timeless, hand-pressed art.
+        </p>
+
+       
+    </div>
+
+    <!-- Bottom Wave or Curve (Optional - for smooth transition) -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none text-gray-100 dark:text-gray-900 transition-colors duration-300">
+        <svg class="relative block w-full h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M1200 120L0 120 0 0C166.66 0 333.33 0 500 0s333.33 0 500 0 166.66 0 200 0v120z" fill="currentColor"></path>
+        </svg>
+    </div>
+</section>
+
+        <!-- 2 & 3. CATEGORIES FILTER & ARTWORK GRID -->
+        <!-- Include Alpine.js for filtering logic -->
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<section class="py-16 px-4 md:px-6 bg-gray-100 dark:bg-black transition-colors duration-300" x-data="{ filter: 'all' }">
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- Filters Section (Mobile Friendly Swipeable) -->
+        <div class="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-3 mb-12 overflow-x-auto pb-4 no-scrollbar">
+            <button @click="filter = 'all'" :class="filter === 'all' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-800 text-[#5a3a45] dark:text-gray-300 border-pink-100 dark:border-gray-700'" class="whitespace-nowrap px-6 py-2 rounded-full border text-sm font-bold shadow-sm transition-all hover:border-primary">All Artworks</button>
+            
+            <button @click="filter = 'floral'" :class="filter === 'floral' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-800 text-[#5a3a45] dark:text-gray-300 border-pink-100 dark:border-gray-700'" class="whitespace-nowrap px-6 py-2 rounded-full border text-sm font-bold transition-all hover:border-primary">Floral Frames</button>
+            
+            <button @click="filter = 'resin'" :class="filter === 'resin' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-800 text-[#5a3a45] dark:text-gray-300 border-pink-100 dark:border-gray-700'" class="whitespace-nowrap px-6 py-2 rounded-full border text-sm font-bold transition-all hover:border-primary">Resin Art</button>
+            
+            <button @click="filter = 'wedding'" :class="filter === 'wedding' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-800 text-[#5a3a45] dark:text-gray-300 border-pink-100 dark:border-gray-700'" class="whitespace-nowrap px-6 py-2 rounded-full border text-sm font-bold transition-all hover:border-primary">Wedding Keepsakes</button>
+            
+            <button @click="filter = 'minimal'" :class="filter === 'minimal' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-800 text-[#5a3a45] dark:text-gray-300 border-pink-100 dark:border-gray-700'" class="whitespace-nowrap px-6 py-2 rounded-full border text-sm font-bold transition-all hover:border-primary">Minimal Botanical</button>
+        </div>
+
+        <!-- Artwork Grid (Total 9 Items) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+            
+            <!-- Item 1 - Minimal -->
+            <div x-show="filter === 'all' || filter === 'floral' || filter === 'resin' || filter === 'wedding' || filter === 'minimal'" x-transition class="group bg-white dark:bg-gray-800 rounded-[2.5rem] p-4 border border-pink-50 dark:border-gray-700 transition-all hover:shadow-2xl">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-square mb-6">
+                    <img src="img/artwork2.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase text-primary dark:text-gray-300">Minimal Art</div>
+                </div>
+                <div class="px-2 pb-2">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-[#1f1015] dark:text-white transition-colors">Wildflower Symmetry</h3>
+                        <span class="text-xl font-medium text-primary dark:text-gray-300 transition-colors">$58</span>
+                    </div>
+                    <p class="text-[#9c6e7c] dark:text-gray-400 text-sm mb-6 transition-colors">Pressed wild field flowers in a 8x10 floating glass frame.</p>
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-3 rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-primaryDark transition-all">Add to Cart</button>
+                        <button class="w-12 bg-studioBg dark:bg-gray-700 text-primary dark:text-gray-300 py-3 rounded-2xl hover:bg-primary hover:text-white transition-all"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 - Floral -->
+            <div x-show="filter === 'all' || filter === 'floral' || filter === 'resin' || filter === 'wedding' || filter === 'minimal'" x-transition class="group bg-white dark:bg-gray-800 rounded-[2.5rem] p-4 border border-pink-50 dark:border-gray-700 transition-all hover:shadow-2xl">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-square mb-6">
+                    <img src="img/artwork3.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase text-primary dark:text-gray-300">Floral Frames</div>
+                </div>
+                <div class="px-2 pb-2">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-[#1f1015] dark:text-white transition-colors">Crimson Rose Petals</h3>
+                        <span class="text-xl font-medium text-primary dark:text-gray-300 transition-colors">$75</span>
+                    </div>
+                    <p class="text-[#9c6e7c] dark:text-gray-400 text-sm mb-6 transition-colors">Preserved deep red rose petals arranged in a vintage layout.</p>
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-3 rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-primaryDark transition-all">Add to Cart</button>
+                        <button class="w-12 bg-studioBg dark:bg-gray-700 text-primary dark:text-gray-300 py-3 rounded-2xl hover:bg-primary hover:text-white transition-all"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 - Resin -->
+            <div x-show="filter === 'all' || filter === 'floral' || filter === 'resin' || filter === 'wedding' || filter === 'minimal'" x-transition class="group bg-white dark:bg-gray-800 rounded-[2.5rem] p-4 border border-pink-50 dark:border-gray-700 transition-all hover:shadow-2xl">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-square mb-6">
+                    <img src="img/artwork4.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase text-primary dark:text-gray-300">Resin Art</div>
+                </div>
+                <div class="px-2 pb-2">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-[#1f1015] dark:text-white transition-colors">Golden Fern Block</h3>
+                        <span class="text-xl font-medium text-primary dark:text-gray-300 transition-colors">$42</span>
+                    </div>
+                    <p class="text-[#9c6e7c] dark:text-gray-400 text-sm mb-6 transition-colors">Autumn ferns preserved in high-clarity crystal resin block.</p>
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-3 rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-primaryDark transition-all">Add to Cart</button>
+                        <button class="w-12 bg-studioBg dark:bg-gray-700 text-primary dark:text-gray-300 py-3 rounded-2xl hover:bg-primary hover:text-white transition-all"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 - Wedding -->
+            <div x-show="filter === 'all' || filter === 'floral' || filter === 'resin' || filter === 'wedding' || filter === 'minimal'" x-transition class="group bg-white dark:bg-gray-800 rounded-[2.5rem] p-4 border border-pink-50 dark:border-gray-700 transition-all hover:shadow-2xl">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-square mb-6">
+                    <img src="img/artwork5.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase text-primary dark:text-gray-300">Wedding</div>
+                </div>
+                <div class="px-2 pb-2">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-[#1f1015] dark:text-white transition-colors">Bridal Bouquet</h3>
+                        <span class="text-xl font-medium text-primary dark:text-gray-300 transition-colors">$120</span>
+                    </div>
+                    <p class="text-[#9c6e7c] dark:text-gray-400 text-sm mb-6 transition-colors">Custom preservation of your special day memories.</p>
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-3 rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-primaryDark transition-all">Add to Cart</button>
+                        <button class="w-12 bg-studioBg dark:bg-gray-700 text-primary dark:text-gray-300 py-3 rounded-2xl hover:bg-primary hover:text-white transition-all"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5 - Minimal -->
+            <div x-show="filter === 'all' || filter === 'floral' || filter === 'resin' || filter === 'wedding' || filter === 'minimal'" x-transition class="group bg-white dark:bg-gray-800 rounded-[2.5rem] p-4 border border-pink-50 dark:border-gray-700 transition-all hover:shadow-2xl">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-square mb-6">
+                    <img src="img/artwork6.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase text-primary dark:text-gray-300">Minimal</div>
+                </div>
+                <div class="px-2 pb-2">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-[#1f1015] dark:text-white transition-colors">Single Leaf Float</h3>
+                        <span class="text-xl font-medium text-primary dark:text-gray-300 transition-colors">$35</span>
+                    </div>
+                    <p class="text-[#9c6e7c] dark:text-gray-400 text-sm mb-6 transition-colors">A single Monstera leaf preserved in minimal aesthetic.</p>
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-3 rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-primaryDark transition-all">Add to Cart</button>
+                        <button class="w-12 bg-studioBg dark:bg-gray-700 text-primary dark:text-gray-300 py-3 rounded-2xl hover:bg-primary hover:text-white transition-all"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6 - Floral -->
+            <div x-show="filter === 'all' || filter === 'floral' || filter === 'resin' || filter === 'wedding' || filter === 'minimal'" x-transition class="group bg-white dark:bg-gray-800 rounded-[2.5rem] p-4 border border-pink-50 dark:border-gray-700 transition-all hover:shadow-2xl">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-square mb-6">
+                    <img src="img/artwork7.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase text-primary dark:text-gray-300">Floral</div>
+                </div>
+                <div class="px-2 pb-2">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-[#1f1015] dark:text-white transition-colors">Wild Daisy Meadow</h3>
+                        <span class="text-xl font-medium text-primary dark:text-gray-300 transition-colors">$65</span>
+                    </div>
+                    <p class="text-[#9c6e7c] dark:text-gray-400 text-sm mb-6 transition-colors">White daisies collected from the highlands, pressed perfectly.</p>
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-3 rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-primaryDark transition-all">Add to Cart</button>
+                        <button class="w-12 bg-studioBg dark:bg-gray-700 text-primary dark:text-gray-300 py-3 rounded-2xl hover:bg-primary hover:text-white transition-all"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 7 - Resin -->
+            <div x-show="filter === 'all' || filter === 'floral' || filter === 'resin' || filter === 'wedding' || filter === 'minimal'" x-transition class="group bg-white dark:bg-gray-800 rounded-[2.5rem] p-4 border border-pink-50 dark:border-gray-700 transition-all hover:shadow-2xl">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-square mb-6">
+                    <img src="img/artwork8.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase text-primary dark:text-gray-300">Resin Art</div>
+                </div>
+                <div class="px-2 pb-2">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-[#1f1015] dark:text-white transition-colors">Floral Coasters</h3>
+                        <span class="text-xl font-medium text-primary dark:text-gray-300 transition-colors">$28</span>
+                    </div>
+                    <p class="text-[#9c6e7c] dark:text-gray-400 text-sm mb-6 transition-colors">Set of 4 handmade resin coasters with tiny petals.</p>
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-3 rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-primaryDark transition-all">Add to Cart</button>
+                        <button class="w-12 bg-studioBg dark:bg-gray-700 text-primary dark:text-gray-300 py-3 rounded-2xl hover:bg-primary hover:text-white transition-all"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 8 - Wedding -->
+            <div x-show="filter === 'all' || filter === 'floral' || filter === 'resin' || filter === 'wedding' || filter === 'minimal'" x-transition class="group bg-white dark:bg-gray-800 rounded-[2.5rem] p-4 border border-pink-50 dark:border-gray-700 transition-all hover:shadow-2xl">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-square mb-6">
+                    <img src="img/artwork9.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase text-primary dark:text-gray-300">Wedding</div>
+                </div>
+                <div class="px-2 pb-2">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-[#1f1015] dark:text-white transition-colors">Vow Preservation</h3>
+                        <span class="text-xl font-medium text-primary dark:text-gray-300 transition-colors">$150</span>
+                    </div>
+                    <p class="text-[#9c6e7c] dark:text-gray-400 text-sm mb-6 transition-colors">Your wedding vows surrounded by your bridal flowers.</p>
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-3 rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-primaryDark transition-all">Add to Cart</button>
+                        <button class="w-12 bg-studioBg dark:bg-gray-700 text-primary dark:text-gray-300 py-3 rounded-2xl hover:bg-primary hover:text-white transition-all"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 9 - Minimal -->
+            <div x-show="filter === 'all' || filter === 'floral' || filter === 'resin' || filter === 'wedding' || filter === 'minimal'" x-transition class="group bg-white dark:bg-gray-800 rounded-[2.5rem] p-4 border border-pink-50 dark:border-gray-700 transition-all hover:shadow-2xl">
+                <div class="relative overflow-hidden rounded-[2rem] aspect-square mb-6">
+                    <img src="img/artwork10.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase text-primary dark:text-gray-300">Minimal</div>
+                </div>
+                <div class="px-2 pb-2">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-[#1f1015] dark:text-white transition-colors">Ethereal Lavender</h3>
+                        <span class="text-xl font-medium text-primary dark:text-gray-300 transition-colors">$45</span>
+                    </div>
+                    <p class="text-[#9c6e7c] dark:text-gray-400 text-sm mb-6 transition-colors">Scentless dried lavender stems in a minimalist float frame.</p>
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-primary text-white py-3 rounded-2xl text-xs font-bold uppercase tracking-widest hover:bg-primaryDark transition-all">Add to Cart</button>
+                        <button class="w-12 bg-studioBg dark:bg-gray-700 text-primary dark:text-gray-300 py-3 rounded-2xl hover:bg-primary hover:text-white transition-all"><i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+/* For Mobile Filter Bar Smooth Scrolling */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+</style>
+        <!-- 4. CUSTOM ARTWORK SECTION -->
+        <section class="py-24 px-6 bg-primaryDark dark:bg-gray-800 transition-colors duration-300 overflow-hidden relative">
+            <!-- Decorative Background Icon -->
+            <div class="absolute -right-10 top-0 opacity-10 text-[300px] text-white pointer-events-none">
+                <i class="fas fa-wand-magic-sparkles"></i>
+            </div>
+            <div class="max-w-5xl mx-auto text-center relative z-10 text-white">
+                <h2 class="font-cormorant text-4xl md:text-6xl mb-6 transition-colors">Preserve Your Own <br> <span class="italic">Memories</span></h2>
+                <p class="text-pink-100 dark:text-gray-200 text-lg mb-12 max-w-2xl mx-auto transition-colors">Send your special flowers — from weddings, anniversaries, or memorials — and we’ll turn them into a timeless keepsake art piece.</p>
+                <a href="contact.html" class="inline-block px-12 py-5 bg-white text-primaryDark dark:bg-gray-800 dark:text-white rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-2xl">
+                    Start Custom Order
+                </a>
+            </div>
+        </section>
+
+        <!-- 5. LIMITED EDITION COLLECTION -->
+        <section class="py-24 px-6 bg-white dark:bg-black transition-colors duration-300">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-cormorant text-center text-4xl md:text-5xl text-[#1f1015] dark:text-white mb-16 transition-colors">Limited Edition <span class="text-primary dark:text-gray-300 italic">Collections</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Collection 1 -->
+                    <div class="relative group rounded-[3rem] overflow-hidden h-[400px]">
+                        <img src="img/artwork11.jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-10 left-10 text-white">
+                            <span class="text-xs font-bold uppercase tracking-[0.3em] text-primary dark:text-gray-300 mb-2 block transition-colors">Spring 2026</span>
+                            <h3 class="font-cormorant text-4xl mb-4">Spring Bloom Collection</h3>
+                            <a href="#" class="text-sm font-bold border-b border-white pb-1 hover:text-primary dark:hover:text-white hover:border-primary dark:hover:border-pink-400 transition-all">Shop Collection</a>
+                        </div>
+                    </div>
+                    <!-- Collection 2 -->
+                    <div class="relative group rounded-[3rem] overflow-hidden h-[400px]">
+                        <img src="img/artwork12.jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1f1015]/80 via-[#1f1015]/20 to-transparent"></div>
+                        <div class="absolute bottom-10 left-10 text-white">
+                            <span class="text-xs font-bold uppercase tracking-[0.3em] text-primary dark:text-gray-300 mb-2 block transition-colors">Coming Soon</span>
+                            <h3 class="font-cormorant text-4xl mb-4">Autumn Leaf Series</h3>
+                            <a href="#" class="text-sm font-bold border-b border-white pb-1 hover:text-primary dark:hover:text-white hover:border-primary dark:hover:border-pink-400 transition-all">Get Notified</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER CONTAINER -->
+    <div id="footer-root"></div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>
