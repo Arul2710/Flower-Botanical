@@ -28,18 +28,18 @@ const NavBar = (() => {
   const NAV_LINKS = [
     {
       label: 'Home',
-      icon: 'fa-house',
+      icon: 'fa-home',
       href: '#',
       children: [
-        { label: 'Home 1', icon: 'fa-house-chimney', href: 'index.html' },
-        { label: 'Home 2', icon: 'fa-seedling',       href: 'home2.html' },
+        { label: 'Home 1', href: 'index.html',  icon: 'fa-house' },
+        { label: 'Home 2', href: 'home2.html',  icon: 'fa-layer-group' },
       ],
     },
-    { label: 'About',    icon: 'fa-leaf',          href: 'about.html'    },
-    { label: 'Artworks', icon: 'fa-palette',       href: 'artworks.html' },
-    { label: 'Booking',  icon: 'fa-calendar-alt',  href: 'booking.html'  },
-    { label: 'Price',    icon: 'fa-tag',            href: 'price.html'    },
-    { label: 'Contact',  icon: 'fa-envelope',       href: 'contact.html'  },
+    { label: 'About',    icon: 'fa-seedling',     href: 'about.html'    },
+    { label: 'Artworks', icon: 'fa-images',        href: 'artworks.html' },
+    { label: 'Booking',  icon: 'fa-calendar-check',href: 'booking.html'  },
+    { label: 'Price',    icon: 'fa-tag',           href: 'price.html'    },
+    { label: 'Contact',  icon: 'fa-envelope',      href: 'contact.html'  },
   ];
 
   /* ================================================================
@@ -683,6 +683,21 @@ const NavBar = (() => {
     @media (max-width: 520px) {
       .nb-wrap { top: 10px; left: 12px; right: 12px; }
       .nb-sidebar { width: 100%; max-width: 100%; border-left: none; }
+    }
+
+    @media (max-width: 380px) {
+      .nb-wrap { top: 8px; left: 8px; right: 8px; }
+      .nb { padding: 6px 8px 6px 14px; gap: 4px; }
+      .nb-logo-text { font-size: 12px; }
+      .nb-logo-icon { width: 28px; height: 28px; font-size: 12px; }
+      .nb-hamburger { width: 32px; height: 32px; }
+      .nb-hamburger-bar { width: 16px; }
+      .nb-sidebar { width: 100%; max-width: 100%; border-left: none; }
+      .nb-sb-body { padding: 12px 10px 20px; }
+      .nb-sb-sub-inner { padding: 4px 0 6px 32px; }
+      .nb-sb-link { padding: 11px 12px; font-size: 11.5px; }
+      .nb-sb-sub-link { padding: 8px 10px; font-size: 11px; }
+      .nb-sb-settings { padding: 12px; }
     }
   `;
 

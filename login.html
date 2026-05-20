@@ -95,7 +95,7 @@
     </style>
 </head>
 
-<body class="antialiased bg-[#fef8f4] dark:bg-black transition-colors duration-500 relative min-h-screen overflow-x-hidden text-[#1f1015] dark:text-gray-100">
+<body class="antialiased bg-[#fef8f4] dark:bg-black transition-colors duration-500 relative min-h-screen overflow-x-hidden text-[#1f1015] dark:text-white">
 
     <!-- Botanical background decorative elements (no scroll interference) -->
     <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -104,22 +104,22 @@
         <div class="absolute top-1/3 right-1/4 text-6xl opacity-10 dark:opacity-8 floating-botanical delay-500">🍃</div>
         <div class="absolute bottom-10 left-[15%] text-7xl opacity-10 dark:opacity-5 floating-botanical">🌼</div>
         <div class="absolute top-2/3 left-5 text-5xl opacity-10 floating-botanical delay-200">🌻</div>
-        <div class="absolute inset-0 bg-gradient-to-br from-cream/50 via-transparent to-cream/30 dark:from-black/60 dark:to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-cream/50 via-transparent to-cream/30"></div>
     </div>
 
     <!-- top controls: theme + rtl (botanical friendly) - always accessible -->
     <div class="fixed top-5 right-5 z-50 flex items-center gap-3">
-        <button id="rtlToggle" class="w-10 h-10 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm border border-secondary/30 dark:border-gray-700 flex items-center justify-center text-secondary dark:text-gray-300 hover:text-primary dark:hover:text-white hover:border-primary dark:hover:border-pink-500 transition-all duration-200" title="RTL / LTR">
+        <button id="rtlToggle" class="w-10 h-10 rounded-2xl bg-white/80 backdrop-blur-md shadow-sm border border-secondary/30 flex items-center justify-center text-secondary hover:text-primary hover:border-primary transition-all duration-200" title="RTL / LTR">
             <i class="fas fa-right-left text-sm"></i>
         </button>
-        <button id="themeToggle" class="w-10 h-10 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm border border-secondary/30 dark:border-gray-700 flex items-center justify-center text-secondary dark:text-gray-300 hover:text-primary dark:hover:text-white hover:border-primary dark:hover:border-pink-500 transition-all duration-200" title="Dark / Light">
+        <button id="themeToggle" class="w-10 h-10 rounded-2xl bg-white/80 backdrop-blur-md shadow-sm border border-secondary/30 flex items-center justify-center text-secondary hover:text-primary hover:border-primary transition-all duration-200" title="Dark / Light">
             <i id="themeIcon" class="fas fa-moon text-sm"></i>
         </button>
     </div>
 
     <!-- main card: flower & botanical login experience - fully responsive no scroll lock -->
     <div class="relative z-10 min-h-screen w-full flex items-center justify-center px-4 py-20">
-        <div class="w-full max-w-md bg-white dark:bg-gray-800 backdrop-blur-sm rounded-5xl shadow-2xl border border-secondary/15 dark:border-gray-700 p-6 sm:p-9 transition-colors duration-300">
+        <div class="w-full max-w-md bg-white dark:bg-gray-900 backdrop-blur-sm rounded-5xl shadow-2xl border border-secondary/15 dark:border-white/10 p-6 sm:p-9 transition-colors duration-300">
             
             <!-- brand & flower + botanical header -->
             <div class="flex flex-col items-center mb-6">
@@ -139,33 +139,33 @@
             <form id="loginForm" class="space-y-5">
                 <!-- email field -->
                 <div>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-secondary dark:text-white mb-1.5 ml-1 transition-colors">
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-secondary dark:text-gray-300 mb-1.5 ml-1">
                         <i class="fas fa-envelope mr-1 text-xs"></i> Email address
                     </label>
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                            <i class="fas fa-feather-alt text-primary/60 dark:text-gray-300/60 text-sm transition-colors"></i>
+                            <i class="fas fa-feather-alt text-primary/60 text-sm"></i>
                         </div>
                         <input type="email" id="email" required placeholder="nature@botanica.com" 
-                            class="w-full pl-11 pr-4 py-3.5 bg-cream/80 dark:bg-gray-700 border border-secondary/30 dark:border-transparent rounded-2xl focus:border-primary dark:focus:border-pink-500 focus:ring-2 focus:ring-primary/20 outline-none transition-all text-deepgreen dark:text-white shadow-inner text-sm neu-input dark:placeholder-gray-400">
+                            class="w-full pl-11 pr-4 py-3.5 bg-cream/80 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-500 border border-secondary/30 dark:border-white/10 rounded-2xl focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-deepgreen shadow-inner text-sm neu-input placeholder-secondary/50">
                     </div>
                 </div>
 
                 <!-- password field -->
                 <div>
                     <div class="flex justify-between mb-1.5 px-1">
-                        <label class="text-[11px] font-bold uppercase tracking-wider text-secondary dark:text-white transition-colors">
+                        <label class="text-[11px] font-bold uppercase tracking-wider text-secondary dark:text-gray-300">
                             <i class="fas fa-lock mr-1 text-xs"></i> Password
                         </label>
-                        <a href="#" id="forgotPwdLink" class="text-[10px] font-semibold text-primary dark:text-gray-300 hover:text-secondary dark:hover:text-white transition-colors">forgate  Password</a>
+                        <a href="#" id="forgotPwdLink" class="text-[10px] font-semibold text-primary hover:text-secondary transition-colors">Forgot  Password</a>
                     </div>
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                            <i class="fas fa-leaf text-primary/60 dark:text-gray-300/60 text-sm transition-colors"></i>
+                            <i class="fas fa-leaf text-primary/60 text-sm"></i>
                         </div>
                         <input type="password" id="password" required placeholder="••••••••" 
-                            class="w-full pl-11 pr-12 py-3.5 bg-cream/80 dark:bg-gray-700 border border-secondary/30 dark:border-transparent rounded-2xl focus:border-primary dark:focus:border-pink-500 focus:ring-2 focus:ring-primary/20 outline-none transition-all text-deepgreen dark:text-white shadow-inner text-sm dark:placeholder-gray-400">
-                        <button type="button" id="togglePasswordBtn" class="absolute inset-y-0 right-0 pr-4 flex items-center text-secondary/60 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors">
+                            class="w-full pl-11 pr-12 py-3.5 bg-cream/80 dark:bg-gray-800 dark:text-gray-100 border border-secondary/30 dark:border-white/10 rounded-2xl focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-deepgreen shadow-inner text-sm">
+                        <button type="button" id="togglePasswordBtn" class="absolute inset-y-0 right-0 pr-4 flex items-center text-secondary/60 hover:text-primary transition-colors">
                             <i id="eyeIcon" class="fas fa-eye text-sm"></i>
                         </button>
                     </div>
@@ -174,13 +174,13 @@
                 <!-- remember me row -->
                 <div class="flex items-center justify-between pt-1">
                     <label class="flex items-center gap-2 cursor-pointer group">
-                        <input type="checkbox" id="rememberCheck" class="checkbox-botanica w-3.5 h-3.5 rounded border-secondary/40 text-secondary focus:ring-primary/30 bg-cream dark:bg-gray-700 dark:border-gray-700">
-                        <span class="text-xs font-medium text-gray-600 dark:text-gray-300 group-hover:text-primary dark:group-hover:text-pink-400 transition-colors">Remember me</span>
+                        <input type="checkbox" id="rememberCheck" class="checkbox-botanica w-3.5 h-3.5 rounded border-secondary/40 text-secondary focus:ring-primary/30 bg-cream">
+                        <span class="text-xs font-medium text-[#5a3a45] dark:text-gray-400 group-hover:text-primary transition-colors">Remember me</span>
                     </label>
                 </div>
 
                 <!-- login button -->
-                <button type="submit" class="w-full mt-3 py-3.5 bg-primary dark:bg-gray-600 hover:bg-primaryDark dark:hover:bg-gray-700 text-white rounded-2xl font-bold text-xs uppercase tracking-widest shadow-lg shadow-primary/20 dark:shadow-none transition-all duration-300 flex items-center justify-center gap-2 group">
+                <button type="submit" class="w-full mt-3 py-3.5 bg-primary hover:bg-primaryDark text-white rounded-2xl font-bold text-xs uppercase tracking-widest shadow-lg shadow-primary/20 transition-all duration-300 flex items-center justify-center gap-2 group">
                     <i class="fas fa-flower"></i> login 
                     <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                 </button>
@@ -189,29 +189,37 @@
             <!-- elegant divider -->
             <div class="relative my-7">
                 <div class="absolute inset-0 flex items-center">
-                    <div class="w-full border-t border-secondary/20 dark:border-gray-700"></div>
+                    <div class="w-full border-t border-secondary/20"></div>
                 </div>
                 <div class="relative flex justify-center text-xs">
-                    <span class="px-3 bg-white dark:bg-gray-800 text-secondary/60 dark:text-gray-400 font-bold uppercase tracking-widest text-[9px] transition-colors"><i class="fas fa-spa mr-1"></i> blossom connections</span>
+                    <span class="px-3 bg-white dark:bg-gray-900 text-secondary/60 dark:text-gray-500 font-bold uppercase tracking-widest text-[9px]"><i class="fas fa-spa mr-1"></i> blossom connections</span>
                 </div>
             </div>
 
             <!-- social sign in: Google + Facebook (Instagram removed) -->
-            <div class="grid grid-cols-2 gap-3">
-                <button class="social-login-btn flex items-center justify-center gap-2 py-2.5 px-3 bg-cream/80 dark:bg-gray-700 border border-secondary/20 dark:border-transparent rounded-xl hover:border-primary/50 dark:hover:border-pink-500 hover:shadow-md transition-all text-xs font-semibold text-deepgreen dark:text-white">
-                    <i class="fab fa-google text-primary dark:text-gray-300 text-sm"></i> Google
-                </button>
-                <button class="social-login-btn flex items-center justify-center gap-2 py-2.5 px-3 bg-cream/80 dark:bg-gray-700 border border-secondary/20 dark:border-transparent rounded-xl hover:border-primary/50 dark:hover:border-pink-500 hover:shadow-md transition-all text-xs font-semibold text-deepgreen dark:text-white">
-                    <i class="fab fa-facebook-f text-primary dark:text-gray-300 text-sm"></i> Facebook
-                </button>
-            </div>
+        <div class="flex items-center justify-center gap-4 max-w-xs mx-auto">
+    <!-- Google Button -->
+    <button class="social-login-btn flex items-center justify-center w-11 h-11 bg-cream/80 dark:bg-gray-800 border border-secondary/20 dark:border-white/10 rounded-xl hover:border-primary/50 hover:shadow-md transition-all text-deepgreen">
+        <i class="fab fa-google text-primary text-lg"></i>
+    </button>
+    
+    <!-- Facebook Button -->
+    <button class="social-login-btn flex items-center justify-center w-11 h-11 bg-cream/80 dark:bg-gray-800 border border-secondary/20 dark:border-white/10 rounded-xl hover:border-primary/50 hover:shadow-md transition-all text-deepgreen">
+        <i class="fab fa-facebook-f text-primary text-lg"></i>
+    </button>
+
+    <!-- Apple Button -->
+    <button class="social-login-btn flex items-center justify-center w-11 h-11 bg-cream/80 dark:bg-gray-800 border border-secondary/20 dark:border-white/10 rounded-xl hover:border-primary/50 hover:shadow-md transition-all text-deepgreen">
+        <i class="fab fa-apple text-primary text-lg"></i>
+    </button>
+</div>
 
             <!-- create account link -->
-            <p class="mt-7 text-center text-xs text-gray-600 dark:text-gray-300 transition-colors">
+            <p class="mt-7 text-center text-xs text-[#5a3a45] dark:text-gray-400">
                 New to the botanical collective? 
-                <a href="#" id="createAccountLink" class="font-bold text-secondary dark:text-gray-300 hover:text-primary dark:hover:text-white border-b border-secondary/40 dark:border-gray-700/40 hover:border-primary dark:hover:border-pink-300 transition-all pb-0.5 ml-1"> create account </a>
+                <a href="#" id="createAccountLink" class="font-bold text-secondary hover:text-primary border-b border-secondary/40 hover:border-primary transition-all pb-0.5 ml-1"> create account </a>
             </p>
-            <p class="text-center text-[10px] text-secondary/50 dark:text-gray-500 mt-4 italic transition-colors">preserve memories, press flowers, bloom together</p>
+            <p class="text-center text-[10px] text-secondary/50 dark:text-gray-600 mt-4 italic">preserve memories, press flowers, bloom together</p>
         </div>
     </div>
 
